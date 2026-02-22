@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VR - Ein Sprung in die Illusion</title>
+    <title>Ein Sprung in die Illusion: Die Entfesselung der Virtuellen Welten</title>
 
     <style>
         body {
-            background-color: #f0f2f5; /* Hintergrundfarbe der Seite */
+            background-color: #f0f2f5;
             margin: 0;
             padding: 40px 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -16,14 +16,14 @@
         }
 
         .main-wrapper {
-            width: 90%;
-            max-width: 900px; /* Alle Kacheln haben diese maximale Breite */
+            width: 95%;
+            max-width: 1000px;
             display: flex;
             flex-direction: column;
-            gap: 30px; /* Gleichmäßiger Abstand zwischen den Kacheln */
+            gap: 30px;
         }
 
-        /* Das Design für JEDE Kachel */
+        /* Das Kachel-Design */
         .content-card {
             background: white;
             padding: 40px;
@@ -32,11 +32,11 @@
             box-sizing: border-box;
         }
 
-        /* Speziell für die mittlere Kachel mit dem Bild */
+        /* Spezial-Layout für die mittlere Kachel */
         .split-content {
             display: flex;
             align-items: center;
-            gap: 30px;
+            gap: 40px;
         }
 
         .text-side { flex: 1.2; }
@@ -48,6 +48,7 @@
             overflow: hidden;
             border-radius: 12px;
             cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         .image-wrapper img {
@@ -68,16 +69,24 @@
             opacity: 1;
         }
 
-        h1, h2 { margin-top: 0; color: #111; }
-        p { line-height: 1.7; color: #333; margin-bottom: 0; }
-        .center-text { text-align: center; }
+        h1 { font-size: 2rem; margin-top: 0; color: #111; text-align: center; }
+        h2 { font-size: 1.5rem; margin-top: 0; color: #111; }
+        p { line-height: 1.7; color: #333; margin-bottom: 15px; text-align: justify; }
+        
+        .footer-note {
+            font-size: 0.1px; 
+            color: white; 
+            margin-top: 20px;
+            text-align: center;
+        }
 
-        /* Responsive: Auf dem Handy alles untereinander */
-        @media (max-width: 768px) {
+        /* Mobile Optimierung */
+        @media (max-width: 850px) {
             .split-content {
                 flex-direction: column;
             }
-            .content-card { padding: 25px; }
+            .text-side, .image-side { width: 100%; }
+            h1 { font-size: 1.6rem; }
         }
     </style>
 </head>
@@ -85,11 +94,13 @@
 
 <div class="main-wrapper">
 
-    <div class="content-card center-text">
-        <h1>Ein Sprung in die Illusion</h1>
+    <div class="content-card">
+        <h1>Ein Sprung in die Illusion: Die Entfesselung der Virtuellen Welten</h1>
         <p>
-            NEU-EDEN, 1. Januar 2024 – Die Grenzen der Realität verschwimmen zusehends... 
-            (Dein Einleitungstext hier)
+            NEU-EDEN, 1. Januar 2024 – Die Grenzen der Realität verschwimmen zusehends, während die Technologie der virtuellen Immersion eine Ära einläutet, die einst nur in den kühnsten Träumen von Visionären existierte. Was als klobige Experimente in staubigen Laboren begann, hat sich zu einem Phänomen entwickelt, das bereit ist, jede Facette unseres Lebens zu revolutionieren – von der Bildung über die Unterhaltung bis hin zur Art und Weise, wie wir arbeiten und miteinander in Kontakt treten.
+        </p>
+        <p>
+            Die aktuelle Generation der immersiven Systeme markiert einen monumentalen Sprung nach vorn. Vorbei sind die Zeiten von unscharfen Bildern und störenden Verzögerungen. Die neuesten Geräte bieten eine Bildschärfe und Reaktionsgeschwindigkeit, die das menschliche Auge kaum noch von der physischen Welt unterscheiden kann. Mit haptischen Rückmeldungen, die Berührungen simulieren, und räumlichen Audiosystemen, die Klänge aus jeder Richtung perfekt wiedergeben, ist das Eintauchen in digitale Umgebungen nun so vollständig, dass die Wahrnehmung von "hier" und "dort" fließend wird.
         </p>
     </div>
 
@@ -98,14 +109,16 @@
             <div class="text-side">
                 <h2>Experten Meinung</h2>
                 <p>
-                    Experten sprechen von einer "Meta-Welle", die nicht nur die Unterhaltungsindustrie, 
-                    sondern auch Bereiche wie die Medizin erfasst...
+                    Experten sprechen von einer "Meta-Welle", die nicht nur die Unterhaltungsindustrie, sondern auch Bereiche wie die Medizin und das Ingenieurwesen erfasst. Chirurgen trainieren komplexe Eingriffe in hyperrealistischen virtuellen Operationssälen, Architekten wandeln durch ihre noch nicht gebauten Gebäude und Ingenieure optimieren Prototypen, ohne auch nur ein einziges physisches Modell erstellen zu müssen. Die Effizienzgewinne und das Potenzial zur Fehlervermeidung sind gigantisch.
+                </p>
+                <p>
+                    Doch die größte Veränderung mag im sozialen Gefüge liegen. Konferenzen, die über Kontinente hinweg stattfinden, ermöglichen eine Präsenz, die weit über herkömmliche Videotelefonie hinausgeht. Man trifft sich in kunstvoll gestalteten digitalen Räumen, teilt Bildschirme, interagiert mit virtuellen Objekten und spürt die Nähe der Gesprächspartner, als säßen sie im selben Raum.
                 </p>
             </div>
             <div class="image-side">
                 <div class="image-wrapper">
-                    <img src="Bild1.png" alt="Sichtbares Bild">
-                    <img src="Bild2.png" class="img-hidden" alt="Verstecktes Bild">
+                    <img src="Bild1.png" alt="VR Szene">
+                    <img src="Bild2.png" class="img-hidden" alt="Versteckte Details">
                 </div>
             </div>
         </div>
@@ -113,11 +126,17 @@
 
     <div class="content-card">
         <p>
-            Auch die Bildung profitiert immens. Studenten können historische Ereignisse hautnah miterleben, 
-            komplexe wissenschaftliche Modelle erkunden...
+            Auch die Bildung profitiert immens. Studenten können historische Ereignisse hautnah miterleben, komplexe wissenschaftliche Modelle dreidimensional erkunden oder gefährliche Experimente in einer sicheren Umgebung durchführen. Die Möglichkeiten sind schier grenzenlos und versprechen eine Lernerfahrung, die sowohl fesselnd als auch tiefgreifend ist.
         </p>
-        <p style="font-size: 11px; color: #999; margin-top: 20px; text-align: center;">
-            Geschrieben am 01.01.1801 von Harald dem Herold
+        <p>
+            Trotz des berauschenden Fortschritts bleiben Herausforderungen bestehen. Die Entwicklung von Inhalten, die nicht nur technisch beeindruckend, sondern auch emotional resonierend sind, ist eine fortwährende Aufgabe. Ethische Fragen bezüglich der Dauer des Verbleibs in virtuellen Welten und die Auswirkungen auf die psychische Gesundheit sind ebenfalls Gegenstand intensiver Diskussionen. Die Balance zwischen der physischen und der digitalen Existenz zu finden, wird eine zentrale Aufgabe für die Gesellschaft sein.
+        </p>
+        <p>
+            Die virtuelle Realität ist keine ferne Zukunft mehr; sie ist eine lebendige, atmende Präsenz, die sich rapide weiterentwickelt. Sie bietet uns ein Fenster zu unzähligen Möglichkeiten – eine Einladung, die Welt nicht nur neu zu sehen, sondern neu zu erfahren. Wir stehen am Anfang einer Ära, in der die Grenzen des Vorstellbaren immer weiter verschoben werden. Die Reise hat gerade erst begonnen.
+        </p>
+        
+        <p class="footer-note">
+            Geschrieben am 01.01.1801 um 12:59 von Harald dem Herold, Fürst von Planten und Eroberer der Welten - DIES IST EIN TEST
         </p>
     </div>
 
