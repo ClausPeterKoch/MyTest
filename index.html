@@ -7,70 +7,49 @@
 
 
 	<style>
-    /* 1. Grund-Layout: Alles im Body zentrieren */
     body {
-        margin: 0;
-        padding: 0;
+        background-color: #f0f2f5; /* Hellgrauer Hintergrund lässt weiße Kacheln strahlen */
         display: flex;
-        justify-content: center; /* Horizontal mittig */
-        align-items: center;     /* Vertikal mittig (bei Bedarf) */
-        min-height: 100vh;       /* Nutzt die volle Fensterhöhe */
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #f9f9f9;
-        color: #333;
+        justify-content: center;
+        padding: 40px 0;
+        font-family: 'Segoe UI', sans-serif;
     }
 
-    /* 2. Der Haupt-Container: Begrenzt die Breite */
-    .split-container {
+    .main-wrapper {
+        width: 90%;
+        max-width: 800px; /* Begrenzt die Breite, damit es nicht "verloren" wirkt */
         display: flex;
-        align-items: center;     /* Sorgt dafür, dass Text & Bild auf einer Linie sind */
-        flex-wrap: wrap;
-        max-width: 1000px;       /* WICHTIG: Verhindert, dass der Text sich zu weit dehnt */
-        width: 90%;              /* Abstand zu den Rändern auf kleinen Bildschirmen */
+        flex-direction: column; /* Stapelt die Kacheln untereinander */
+        gap: 30px; /* Abstand zwischen den Kacheln */
+    }
+
+    .content-card {
         background: white;
         padding: 40px;
-        border-radius: 20px;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.05); /* Sanfter Schatten wie im Bild */
+        text-align: center;
     }
 
-    /* 3. Text-Bereich: Textgestaltung */
-    .text-side {
-        flex: 1;
-        padding: 20px 40px;      /* Mehr Platz zu den Seiten */
-        min-width: 300px;
-        text-align: center;      /* Zentriert den Text selbst */
-    }
-
-    .text-side h1 {
-        font-size: 2.5rem;
-        margin-bottom: 20px;
-        color: #1a1a1a;
-    }
-
-    .text-side p {
-        font-size: 1.1rem;
-        line-height: 1.8;        /* Mehr Zeilenabstand für bessere Lesbarkeit */
-        margin-bottom: 20px;
-    }
-
-    /* 4. Bild-Bereich */
-    .image-side {
-        flex: 1;
-        min-width: 300px;
+    /* Spezial-Fall: Text und Bild in einer Kachel nebeneinander */
+    .content-card.split {
         display: flex;
-        justify-content: center; /* Zentriert das Bild in seinem Bereich */
+        align-items: center;
+        gap: 30px;
+        text-align: left;
     }
+
+    .text-part { flex: 1; }
+    .image-part { flex: 1; }
 
     .image-wrapper {
         position: relative;
-        width: 100%;
-        max-width: 450px;       /* Verhindert, dass das Bild zu riesig wird */
+        overflow: hidden;
+        border-radius: 10px;
     }
 
     .image-wrapper img {
         width: 100%;
-        height: auto;
-        border-radius: 15px;
         display: block;
     }
 
@@ -79,11 +58,18 @@
         top: 0;
         left: 0;
         opacity: 0;
-        transition: opacity 0.5s ease;
+        transition: 0.5s;
     }
 
     .image-wrapper:hover .img-hidden {
         opacity: 1;
+    }
+
+    /* Responsive: Auf dem Handy wird auch die Split-Kachel untereinander */
+    @media (max-width: 600px) {
+        .content-card.split {
+            flex-direction: column;
+        }
     }
 </style>
 </head>
@@ -125,6 +111,7 @@ Die virtuelle Realität ist keine ferne Zukunft mehr; sie ist eine lebendige, at
 </body>
 
 </html>
+
 
 
 
