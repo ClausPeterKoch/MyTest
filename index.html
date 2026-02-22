@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ein Sprung in die Illusion</title>
+    <title>VR - Ein Sprung in die Illusion</title>
 
     <style>
         body {
-            background-color: #f0f2f5;
+            background-color: #f0f2f5; /* Hintergrundfarbe der Seite */
             margin: 0;
             padding: 40px 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -17,52 +17,45 @@
 
         .main-wrapper {
             width: 90%;
-            max-width: 1000px; /* Etwas breiter für das Nebeneinander-Layout */
+            max-width: 900px; /* Alle Kacheln haben diese maximale Breite */
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 30px; /* Gleichmäßiger Abstand zwischen den Kacheln */
         }
 
-        /* Die Kacheln */
+        /* Das Design für JEDE Kachel */
         .content-card {
             background: white;
             padding: 40px;
             border-radius: 15px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            box-sizing: border-box;
         }
 
-        /* Zentrierter Text für die obere und untere Kachel */
-        .text-centered {
-            text-align: center;
-        }
-
-        /* Das Split-Layout für den mittleren Teil */
-        .split-layout {
+        /* Speziell für die mittlere Kachel mit dem Bild */
+        .split-content {
             display: flex;
             align-items: center;
-            gap: 40px;
-            background: white; /* Gleicher Hintergrund wie Kacheln */
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            gap: 30px;
         }
 
         .text-side { flex: 1.2; }
         .image-side { flex: 1; }
 
+        /* Bild-Container & Hover-Effekt */
         .image-wrapper {
             position: relative;
             overflow: hidden;
-            border-radius: 10px;
+            border-radius: 12px;
+            cursor: pointer;
         }
 
         .image-wrapper img {
             width: 100%;
             display: block;
-            transition: transform 0.5s;
+            transition: transform 0.4s ease;
         }
 
-        /* Verstecktes Bild Effekt */
         .img-hidden {
             position: absolute;
             top: 0;
@@ -75,15 +68,16 @@
             opacity: 1;
         }
 
-        h1, h2 { color: #1a1a1a; margin-top: 0; }
-        p { line-height: 1.7; color: #444; }
+        h1, h2 { margin-top: 0; color: #111; }
+        p { line-height: 1.7; color: #333; margin-bottom: 0; }
+        .center-text { text-align: center; }
 
-        /* Handy-Ansicht: Alles untereinander */
-        @media (max-width: 800px) {
-            .split-layout {
+        /* Responsive: Auf dem Handy alles untereinander */
+        @media (max-width: 768px) {
+            .split-content {
                 flex-direction: column;
-                text-align: center;
             }
+            .content-card { padding: 25px; }
         }
     </style>
 </head>
@@ -91,27 +85,40 @@
 
 <div class="main-wrapper">
 
-    <div class="content-card text-centered">
+    <div class="content-card center-text">
         <h1>Ein Sprung in die Illusion</h1>
-        <p>NEU-EDEN, 1. Januar 2024 – Die Grenzen der Realität verschwimmen zusehends... (Dein Einleitungstext)</p>
+        <p>
+            NEU-EDEN, 1. Januar 2024 – Die Grenzen der Realität verschwimmen zusehends... 
+            (Dein Einleitungstext hier)
+        </p>
     </div>
 
-    <div class="split-layout">
-        <div class="text-side">
-            <h2>Experten Meinung</h2>
-            <p>Experten sprechen von einer "Meta-Welle", die nicht nur die Unterhaltungsindustrie, sondern auch Bereiche wie die Medizin erfasst... (Dein Expertentext)</p>
-        </div>
-        <div class="image-side">
-            <div class="image-wrapper">
-                <img src="Bild1.png" alt="VR Ansicht">
-                <img src="Bild2.png" class="img-hidden" alt="Versteckte Details">
+    <div class="content-card">
+        <div class="split-content">
+            <div class="text-side">
+                <h2>Experten Meinung</h2>
+                <p>
+                    Experten sprechen von einer "Meta-Welle", die nicht nur die Unterhaltungsindustrie, 
+                    sondern auch Bereiche wie die Medizin erfasst...
+                </p>
+            </div>
+            <div class="image-side">
+                <div class="image-wrapper">
+                    <img src="Bild1.png" alt="Sichtbares Bild">
+                    <img src="Bild2.png" class="img-hidden" alt="Verstecktes Bild">
+                </div>
             </div>
         </div>
     </div>
 
     <div class="content-card">
-        <p>Auch die Bildung profitiert immens. Studenten können historische Ereignisse hautnah miterleben... (Dein Schlusstext)</p>
-        <p style="font-size:10px; color:#ccc; text-align: center;">Geschrieben von Harald dem Herold</p>
+        <p>
+            Auch die Bildung profitiert immens. Studenten können historische Ereignisse hautnah miterleben, 
+            komplexe wissenschaftliche Modelle erkunden...
+        </p>
+        <p style="font-size: 11px; color: #999; margin-top: 20px; text-align: center;">
+            Geschrieben am 01.01.1801 von Harald dem Herold
+        </p>
     </div>
 
 </div>
