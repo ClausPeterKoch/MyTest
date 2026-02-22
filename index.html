@@ -7,53 +7,85 @@
 
 
 	<style>
-        /* Das CSS direkt im HTML-Dokument */
-        .split-container {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            font-family: sans-serif;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+    /* 1. Grund-Layout: Alles im Body zentrieren */
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center; /* Horizontal mittig */
+        align-items: center;     /* Vertikal mittig (bei Bedarf) */
+        min-height: 100vh;       /* Nutzt die volle Fensterhöhe */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+    }
 
-        .text-side, .image-side {
-            flex: 1;
-            padding: 40px;
-            min-width: 350px;
-        }
+    /* 2. Der Haupt-Container: Begrenzt die Breite */
+    .split-container {
+        display: flex;
+        align-items: center;     /* Sorgt dafür, dass Text & Bild auf einer Linie sind */
+        flex-wrap: wrap;
+        max-width: 1000px;       /* WICHTIG: Verhindert, dass der Text sich zu weit dehnt */
+        width: 90%;              /* Abstand zu den Rändern auf kleinen Bildschirmen */
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    }
 
-        /* Container für den Bild-Effekt */
-        .image-wrapper {
-            position: relative;
-            cursor: pointer;
-        }
+    /* 3. Text-Bereich: Textgestaltung */
+    .text-side {
+        flex: 1;
+        padding: 20px 40px;      /* Mehr Platz zu den Seiten */
+        min-width: 300px;
+        text-align: center;      /* Zentriert den Text selbst */
+    }
 
-        .image-wrapper img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
+    .text-side h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #1a1a1a;
+    }
 
-        /* Das versteckte Bild */
-        .img-hidden {
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0; /* Unsichtbar */
-            transition: opacity 0.6s ease-in-out;
-        }
+    .text-side p {
+        font-size: 1.1rem;
+        line-height: 1.8;        /* Mehr Zeilenabstand für bessere Lesbarkeit */
+        margin-bottom: 20px;
+    }
 
-        /* Effekt: Beim Drüberfahren (Hover) wird es sichtbar */
-        .image-wrapper:hover .img-hidden {
-            opacity: 1;
-        }
+    /* 4. Bild-Bereich */
+    .image-side {
+        flex: 1;
+        min-width: 300px;
+        display: flex;
+        justify-content: center; /* Zentriert das Bild in seinem Bereich */
+    }
 
-        h1 { font-size: 2.5rem; margin-bottom: 20px; }
-        p { line-height: 1.6; color: #333; }
-    </style>
+    .image-wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 450px;       /* Verhindert, dass das Bild zu riesig wird */
+    }
+
+    .image-wrapper img {
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+        display: block;
+    }
+
+    .img-hidden {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    .image-wrapper:hover .img-hidden {
+        opacity: 1;
+    }
+</style>
 </head>
 <body>
     <h1>Ein Sprung in die Illusion: Die Entfesselung der Virtuellen Welten</h1>
@@ -93,6 +125,7 @@ Die virtuelle Realität ist keine ferne Zukunft mehr; sie ist eine lebendige, at
 </body>
 
 </html>
+
 
 
 
